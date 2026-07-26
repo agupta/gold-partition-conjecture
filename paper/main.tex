@@ -1,0 +1,392 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={The Gold Partition Conjecture Holds through Fourteen Elements},
+  pdfauthor={Anish Gupta},
+  pdfsubject={Linear extensions of finite partially ordered sets},
+  pdfkeywords={posets, linear extensions, Gold Partition Conjecture,
+    1/3-2/3 conjecture, computer-assisted proof}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\ext}{\mathrm{e}}
+\newcommand{\bal}{\mathrm{b}}
+
+\title{The Gold Partition Conjecture Holds\\
+through Fourteen Elements}
+\author{Anish Gupta\thanks{Independent researcher.
+  \texttt{ag2269@cantab.ac.uk};
+  ORCID: \href{https://orcid.org/0009-0008-8137-7729}
+  {0009-0008-8137-7729}.}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Peczarski verified the Gold Partition Conjecture for posets with at most
+$11$ elements in 2006.  We extend this exhaustive frontier to $14$
+elements.  At order $14$, the unique chain is set aside and every one of
+the remaining $1{,}338{,}193{,}159{,}770$ isomorphism classes receives
+one of Peczarski's certificates.  It follows, in particular, that the
+$1/3$--$2/3$ Conjecture holds through order $14$, one order beyond the
+previous complete mutual-rank-probability census.  The calculation uses exact
+integer recurrences on the lattice of order ideals and was divided into
+$4{,}096$ deterministic shards.  The complete shard archive, source, and
+independent small-order checks accompany the paper.
+\end{abstract}
+
+\noindent\textbf{2020 Mathematics Subject Classification.}
+Primary 06A07.
+
+\noindent\textbf{Keywords.}
+Partially ordered set, linear extension, Gold Partition Conjecture,
+$1/3$--$2/3$ Conjecture, computer-assisted proof.
+
+\section{Introduction}
+
+Let $P$ be a finite poset and write $\ext(P)$ for its number of linear
+extensions.  For $x,y\in P$, let $P+xy$ denote the poset obtained by
+adjoining $x<y$ and taking the transitive closure; if $y<x$ already, set
+$\ext(P+xy)=0$.  Thus
+\[
+  p_P(x,y)=\frac{\ext(P+xy)}{\ext(P)}
+\]
+is the probability that $x$ precedes $y$ in a uniformly chosen linear
+extension.  For a non-chain $P$, its balance constant is
+\[
+  \bal(P)=
+  \max_{x\parallel y}\min\{p_P(x,y),p_P(y,x)\}.
+\]
+The $1/3$--$2/3$ Conjecture asserts that $\bal(P)\geq1/3$ for every
+finite non-chain; see the survey of Chan and Pak~\cite{chan-pak}.
+
+The Gold Partition Conjecture is stronger.  It asks for two comparisons
+chosen in advance such that, for every possible sequence of outcomes,
+\[
+  t_0\geq t_1+t_2,
+\]
+where $t_0$ is the initial number of linear extensions and $t_i$ is the
+number remaining after the first $i$ comparisons.  If the first comparison
+leaves a chain, Peczarski sets $t_2=1$.  He introduced the conjecture,
+proved that it implies the $1/3$--$2/3$ Conjecture, and verified it
+computationally through $11$ elements
+\cite[Conjecture~1, Proposition~1, and Theorem~3]{peczarski-gold}.
+The name refers to the resulting sorting bound
+$C(P)\leq\log_{\varphi}\ext(P)$, where
+$\varphi=(1+\sqrt5)/2$~\cite[Propositions~2--3]{peczarski-gold}.
+We are aware of no later exhaustive extension;
+Theorem~\ref{thm:main} advances that frontier for the first time since 2006.
+
+\begin{theorem}\label{thm:main}
+Every non-chain poset on at most $14$ elements satisfies the Gold
+Partition Conjecture.
+\end{theorem}
+
+\begin{corollary}\label{thm:third}
+Every non-chain poset on at most $14$ elements has balance constant at
+least $1/3$.
+\end{corollary}
+
+Corollary~\ref{thm:third} follows from Theorem~\ref{thm:main} and
+Peczarski's Proposition~1.  Only its order-$14$ case advances the previous
+computational frontier: De Loof, De Baets, and De Meyer computed all mutual
+rank probabilities and determined the worst balanced posets through order
+$13$~\cite{deloof-census}.  The present calculation is a Gold Partition
+decision at order $14$, not a census of all order-$14$ probabilities.
+
+There has also been structural progress since Peczarski's original
+calculation.  He proved the conjecture for every poset with a nontrivial
+automorphism, for a class containing all $N$-free posets, and for $6$-thin
+posets~\cite{peczarski-comments,peczarski-thin}.  Dolores-Cuenca,
+Guzm\'an-S\'aenz, and Kim proved that it is preserved by lexicographic sum
+(substitution)~\cite[Lemma~2.5]{dolores-cuenca}; their multiplicative
+argument applies unchanged to Peczarski's non-strict inequality.
+
+\section{Certificates}
+
+For an ordered incomparable pair $(x,y)$, Peczarski calls $z$ a
+\emph{slave} if either $z>x$ and $z\parallel y$, or $z<y$ and
+$z\parallel x$.  The verifier uses the following sufficient conditions
+from Peczarski's Definitions 1--2 and Lemmas 1--2
+\cite[pp.~91--92]{peczarski-gold}.
+
+\begin{lemma}[Peczarski]\label{lem:certificates}
+A non-chain $P$ has the Gold Partition property if one of the following
+conditions holds.
+\begin{enumerate}
+  \item There is an ordered incomparable pair $(x,y)$ with at most one
+  slave and
+  \[
+    2\ext(P+xy)\geq\ext(P).
+  \]
+  \item There are three distinct elements $x,y,z$ such that
+  \[
+    \ext(P+xy+yz)
+      \leq \max\{\ext(P+yx),\ext(P+zy)\}
+      \leq \frac{\ext(P)}2.
+  \]
+\end{enumerate}
+\end{lemma}
+
+The elements in condition (2) need not be pairwise incomparable.
+Peczarski's separate cyclic-triple screen is subsumed by the exhaustive
+search for condition (2).
+In each case the proof supplies two comparisons fixed before their outcomes
+are known, as required by the conjecture.
+
+The verifier also accepts a half-balanced incomparable pair $(x,y)$,
+meaning
+\[
+  2\ext(P+xy)=2\ext(P+yx)=\ext(P).
+\]
+Indeed, use this pair as the first comparison.  Then $t_1=t_0/2$, while
+any fixed second comparison leaves at most $t_1$ extensions; hence
+$t_0\geq t_1+t_2$.  This direct argument is also recorded by
+Peczarski~\cite{peczarski-comments}.
+
+There is a useful inexpensive screen for condition (1).  If both
+orientations of an incomparable pair have at most one slave, one of
+$\ext(P+xy)$ and $\ext(P+yx)$ is at least $\ext(P)/2$, so condition (1)
+holds without counting either quantity.  The verifier applies this
+bilateral screen first.  It then searches for a low-slave pair or a
+half-balanced pair, and finally for a triple satisfying condition (2).
+The division between the first two certificate counters depends on search
+order; their union does not.
+
+\section{Exact counting}
+
+Let $\mathcal I(P)$ be the lattice of order ideals of $P$, and let $F(I)$ be
+the number of linear extensions of the induced poset on $I$.  Then
+\begin{equation}\label{eq:forward}
+  F(\varnothing)=1,\qquad
+  F(I)=\sum_{x\in\max(I)}F(I\setminus\{x\}).
+\end{equation}
+Assigning zero to ideals that violate an adjoined comparison gives
+$\ext(P+xy)$ and $\ext(P+xy+yz)$.
+
+After the first directly counted pair fails, a forward--backward pass
+supplies all pair counts.  If $B(I)$ is the number of ways to complete a
+linear extension whose initial ideal is $I$, then
+\begin{equation}\label{eq:pairs}
+  \ext(P+xy)=
+  \sum_{\substack{I\in\mathcal I(P)\\
+                  x\in I,\ y\notin I\\
+                  I\cup\{y\}\in\mathcal I(P)}}
+        F(I)B(I\cup\{y\}).
+\end{equation}
+Each product in \eqref{eq:pairs} counts a subset of the linear extensions,
+their sum is at most $\ext(P)$, and the comparisons use only small integer
+multiples.
+This ideal-lattice method for obtaining all mutual rank probabilities in
+one forward and one backward pass is due to De Loof, De Meyer, and
+De Baets~\cite{deloof-ideals}.  Our contribution is not a new all-pairs
+algorithm; the implementation directs the established recurrences toward
+the certificates needed for the Gold Partition decision.
+
+Candidate pairs are tried in a simple structural order.  Candidate
+triples are ordered by decreasing right-hand bound in
+Lemma~\ref{lem:certificates}.  Two cases require no new recurrence.
+If $z<x$, then $\ext(P+xy+yz)=0$.  If $x<z$, the possible positions of
+$y$ relative to $x<z$ partition the linear extensions and give
+\[
+  \ext(P+xy+yz)
+    =\ext(P)-\ext(P+yx)-\ext(P+zy).
+\]
+
+All extension counts are unsigned $64$-bit integers.  This is sufficient
+through order $14$, since $\ext(P)\leq14!$; the formulas above use only
+small integer multiples of these counts.
+
+The posets are supplied by Brinkmann and McKay's
+\texttt{genposetg}, which uses nauty for canonical
+labelling~\cite{brinkmann-mckay,mckay-piperno}.  The Gold Partition property
+is invariant under isomorphism, so one representative of each unlabeled
+class suffices.  The production invocation, run once for each residue from
+$0$ through $4095$, was
+\begin{center}
+\verb|gpc 14 o q m <residue> 4096|.
+\end{center}
+Thus every unlabeled class was sent to the plugin, quiet output was requested,
+and the generator's deterministic modulus filter divided the stream into
+disjoint residues.
+
+\section{Results and verification}
+
+Table~\ref{tab:gpc} records the new orders.  ``Pair certificate'' is the
+invariant union of the low-slave and half-balanced searches.  For each
+order, the chain, pair-certificate, balanced-triple, and open rows
+partition the total.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+ & $n=12$ & $n=13$ & $n=14$\\
+\midrule
+isomorphism classes
+ & 1{,}104{,}891{,}746
+ & 33{,}823{,}827{,}452
+ & 1{,}338{,}193{,}159{,}771\\
+chain
+ & 1 & 1 & 1\\
+pair certificate
+ & 1{,}066{,}006{,}204
+ & 32{,}418{,}324{,}910
+ & 1{,}272{,}077{,}147{,}789\\
+balanced-triple certificate
+ & 38{,}885{,}541
+ & 1{,}405{,}502{,}541
+ & 66{,}116{,}011{,}981\\
+open
+ & 0 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\caption{Gold Partition certificate aggregates.}
+\label{tab:gpc}
+\end{table}
+
+The order-$14$ aggregate contains all $4{,}096$ residues and agrees with
+the published number of unlabeled posets, first obtained by Heitzig and
+Reinhold and independently confirmed by Brinkmann and McKay
+\cite{heitzig-reinhold,brinkmann-mckay}.  Exactly one class is a chain,
+the certificate counts partition the total, and the open count is zero.
+The known total checks enumeration completeness; the partition and shard
+checks are internal consistency tests.  The zero open count is the
+computational conclusion.  The released aggregator was rerun on the
+preserved $4{,}096$-shard archive.
+
+The same executable reproduces the known totals at orders $10$ through
+$13$ and the certificate counts of an earlier run.  Independently, a
+Python program generates every unlabeled poset through order $7$, enumerates
+its linear extensions, and applies the certificate definitions directly.
+A second implementation, using a plain subset recurrence, is compared with
+the released C classifier on every individual poset at orders $8$ and $9$,
+including non-topological labelings.  The differential implementation shares
+neither extension-counting nor certificate code with the classifier.  No
+independent per-poset check is made above order $9$; at higher orders the
+evidence is the class total, the certificate partition, and the shard
+invariants.  The companion full-pair program shares the ideal-lattice
+routines and reproduces the published counts of posets with
+linear-extension-majority cycles at orders $9$ through
+$11$~\cite{deloof-census}.  Tests of the shard protocol and aggregation
+rules are included with the source.
+
+The order-$14$ calculation took approximately $1{,}594$
+core-hours and $18$ hours of wall time on AMD EPYC 7B13 processors.
+In a controlled ablation on the production platform, removing only the
+bilateral early exit increased median user time by factors of $4.25$, $4.81$,
+$5.57$, and $8.55$ at orders $10$ through $13$, respectively.  The first
+figure is a complete pass; the others aggregate the same three fixed modulus
+shards over alternating repetitions.  The baseline binary is the production
+binary, and the total, pair-certificate union, balanced-triple count, and open
+count agreed in every comparison.  This measures the screening step within
+the present implementation, not a speedup over the programs of Peczarski or
+De Loof et al.
+
+\section{Reproducibility}
+
+The manuscript, source, tests, and compact aggregate data are available at
+\[
+  \text{\url{https://github.com/agupta/gold-partition-conjecture}}.
+\]
+The complete order-$14$ shard archive, its checksum manifest, build
+record, and the order-$10$--$13$ regression data are deposited at
+\href{https://doi.org/10.5281/zenodo.21576030}
+{doi:10.5281/zenodo.21576030}.
+The archive includes the two source files used to build the production
+classifier.  The calculation used \texttt{genposetg} 1.1 from nauty 2.9.1
+and a native GCC 13.3.0 build on AMD EPYC 7B13 processors.  The repository
+build is portable by default.  Its \texttt{make check} target runs the
+independent and differential small-order checks, aggregation tests, and an
+end-to-end sharding test.
+
+\paragraph{Acknowledgment of generative-AI assistance.}
+Anthropic Claude Code (Claude 5 family) and OpenAI Codex
+(GPT-5.6 family) were used extensively for software development and
+optimization, computational experiment design, literature discovery, and
+drafting and editing the manuscript.  The author selected the arguments
+and methods, checked the cited sources and reported computations, and
+takes full responsibility for the content.
+
+\begin{thebibliography}{99}
+
+\bibitem{brinkmann-mckay}
+G.~Brinkmann and B.~D. McKay,
+\emph{Posets on up to 16 points},
+Order \textbf{19} (2002), 147--179.
+\href{https://doi.org/10.1023/A:1016543307592}
+{doi:10.1023/A:1016543307592}.
+
+\bibitem{chan-pak}
+S.~H. Chan and I.~Pak,
+\emph{Linear extensions of finite posets},
+EMS Surv. Math. Sci. (2025), published online first.
+\href{https://doi.org/10.4171/EMSS/97}
+{doi:10.4171/EMSS/97}.
+
+\bibitem{deloof-ideals}
+K.~De Loof, H.~De Meyer, and B.~De Baets,
+\emph{Exploiting the lattice of ideals representation of a poset},
+Fund. Inform. \textbf{71} (2006), 309--321.
+\href{https://doi.org/10.3233/FUN-2006-712-309}
+{doi:10.3233/FUN-2006-712-309}.
+
+\bibitem{deloof-census}
+K.~De Loof, B.~De Baets, and H.~De Meyer,
+\emph{Counting linear extension majority cycles in partially ordered sets
+on up to 13 elements},
+Comput. Math. Appl. \textbf{59} (2010), 1541--1547.
+\href{https://doi.org/10.1016/j.camwa.2009.12.021}
+{doi:10.1016/j.camwa.2009.12.021}.
+
+\bibitem{dolores-cuenca}
+E.~R. Dolores-Cuenca, A.~Guzm\'an-S\'aenz, and S.~Kim,
+\emph{The Gold Partition Conjecture and the lexicographic sum of posets},
+\href{https://doi.org/10.48550/arXiv.2410.12494}
+{arXiv:2410.12494} (2024).
+
+\bibitem{heitzig-reinhold}
+J.~Heitzig and J.~Reinhold,
+\emph{The number of unlabeled orders on fourteen elements},
+Order \textbf{17} (2000), 333--341.
+\href{https://doi.org/10.1023/A:1006431609027}
+{doi:10.1023/A:1006431609027}.
+
+\bibitem{mckay-piperno}
+B.~D. McKay and A.~Piperno,
+\emph{Practical graph isomorphism, II},
+J. Symbolic Comput. \textbf{60} (2014), 94--112.
+\href{https://doi.org/10.1016/j.jsc.2013.09.003}
+{doi:10.1016/j.jsc.2013.09.003}.
+
+\bibitem{peczarski-gold}
+M.~Peczarski,
+\emph{The Gold Partition Conjecture},
+Order \textbf{23} (2006), 89--95.
+\href{https://doi.org/10.1007/s11083-006-9033-1}
+{doi:10.1007/s11083-006-9033-1}.
+
+\bibitem{peczarski-thin}
+M.~Peczarski,
+\emph{The Gold Partition Conjecture for 6-thin posets},
+Order \textbf{25} (2008), 91--103.
+\href{https://doi.org/10.1007/s11083-008-9081-9}
+{doi:10.1007/s11083-008-9081-9}.
+
+\bibitem{peczarski-comments}
+M.~Peczarski,
+\emph{Comments on the Golden Partition Conjecture},
+Contrib. Discrete Math. \textbf{12} (2017), 106--109.
+\href{https://doi.org/10.55016/ojs/cdm.v12i1.62349}
+{doi:10.55016/ojs/cdm.v12i1.62349}.
+
+\end{thebibliography}
+
+\end{document}

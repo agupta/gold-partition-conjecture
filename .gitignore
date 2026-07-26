@@ -1,0 +1,13 @@
+/build/
+/results/
+__pycache__/
+*.py[cod]
+paper/*.aux
+paper/*.log
+paper/*.out
+*.failed.*
+*.failed
+*.tmp
+*.swp
+*.swo
+*~

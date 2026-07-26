@@ -1,0 +1,65 @@
+Gold Partition verification, order 14
+=====================================
+
+Versioned archive: https://doi.org/10.5281/zenodo.21576030
+
+Final aggregate
+---------------
+
+quantity                            count
+----------------------  -----------------
+unlabeled posets        1,338,193,159,771
+chains                                  1
+pair certificates       1,272,077,147,789
+triple certificates        66,116,011,981
+open classes                            0
+modulus residues                    4,096
+
+The pair count is the invariant sum of the low-slave and half-balanced
+certificate searches. The certificate partition closes exactly.
+
+Production files
+----------------
+
+The two source files below are pinned by their hashes. Any change to either
+file, including formatting, invalidates this production record and requires a
+new order-14 calculation.
+
+ec79469af12b3af7314cc9471a44e7fc454e99ef002da08393fa84098c47bbc3  src/gpc.c
+87fb6bb1026e0d16362af4cfeb97d75ed82d761b3bce767d60849c86d0dd1295  src/poset_dp.h
+5f759f9de9129cdd56ab040e5c1b67f137a30f271d56c49da91c62493569e70b  genposetg.c
+86329fb3b084e26de7246eb1e77e18334cb7ff09dd327720d5ac9104a8e9f839  build/gpc
+
+The generator was `genposetg` 1.1 from nauty 2.9.1. The binary hash is
+conditional on GCC 13.3.0, AMD EPYC 7B13, and the recorded native build
+flags.
+
+The shard metadata records that binary with the two-column output of
+sha256sum. The aggregator accepts this form only for the exact archived GPC
+profiles, including the order-14 run with modulus 4,096 and the recorded
+production binary. New shards use an explicit binary_sha256 field. The
+historical records predate the generator_options field; their invocations are
+retained in the accompanying data archive.
+
+Checks
+------
+
+- all 4,096 residues were present and disjoint;
+- every shard had one content-validated completion marker;
+- every output contained exactly one final summary;
+- every shard recorded the same binary hash;
+- the total agreed with the published unlabeled-poset count A000112(14);
+- exactly one class was a chain;
+- certificate counters partitioned the total;
+- the open counter was zero.
+
+The published total is an external check on enumeration completeness.
+The shard conditions and partition identity are self-consistency checks.
+The zero open count is the computational result.
+
+Runtime
+-------
+
+Final result: 18 hours 1 minute
+Compute: approximately 1,594 core-hours
+Processors: AMD EPYC 7B13
