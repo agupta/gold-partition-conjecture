@@ -1,6 +1,6 @@
 # The Gold Partition Conjecture Holds through Fourteen Elements
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21576030.svg)](https://doi.org/10.5281/zenodo.21576030)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21576029.svg)](https://doi.org/10.5281/zenodo.21576029)
 
 This repository accompanies an exhaustive verification of Peczarski's Gold
 Partition Conjecture for posets with at most 14 elements. It extends the
@@ -122,6 +122,6 @@ the theorem in this release.
 ## Citation and license
 
 The versioned source and data archive is available from
-[Zenodo](https://doi.org/10.5281/zenodo.21576030). Citation metadata are
+[Zenodo](https://doi.org/10.5281/zenodo.21576029). Citation metadata are
 provided in [`CITATION.cff`](CITATION.cff). The local source is released under
 the MIT License; nauty and `genposetg` remain under their upstream terms.

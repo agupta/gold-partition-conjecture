@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "Please cite the accompanying manuscript."
 title: "The Gold Partition Conjecture Holds through Fourteen Elements"
 type: software
-version: "1.0.0"
-doi: "10.5281/zenodo.21576030"
+version: "1.0.1"
+doi: "10.5281/zenodo.21576029"
 authors:
   - family-names: Gupta
     given-names: Anish
@@ -19,7 +19,7 @@ preferred-citation:
       given-names: Anish
       orcid: "https://orcid.org/0009-0008-8137-7729"
   year: 2026
-  doi: "10.5281/zenodo.21576030"
+  doi: "10.5281/zenodo.21576029"
 keywords:
   - posets
   - linear extensions
