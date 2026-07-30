@@ -1,0 +1,218 @@
+order 14, 16384 residues, binary ebd4683ec498d95f178716fccbf3347b25f44dd4152d3c7f3c54554e7bad31cc
+
+Aggregate
+---------
+total             1,338,193,159,771
+chain                             1
+third                           128
+above             1,338,193,159,642
+viol                              0
+connected         1,269,310,589,336
+cyclic                  478,632,938
+cyclic_inc              478,632,938
+max scc                          10
+
+Majority cycles by length
+-------------------------
+length              full   incomparable only
+     3       477,954,774         477,954,774
+     4         5,419,981           5,419,981
+     5            33,473              33,473
+     6            10,423              10,423
+     7                61                  61
+     8                30                  30
+the two relations agree at every length
+
+Extremal balance constants
+--------------------------
+minimum above 1/3                    37/106 = 0.349056604
+witness                              14:0000000000010007000f000f003f001f00ff009f03ff02ff0fff0aff
+width, height, extensions            2, 8, 318
+canonical form                       14:0000000000020007000f000f002f006f003f017f01ff05ff03ff17ff
+Hasse digraph6                       &M????A??W?@??O?B??_?B??O?B?AO?B??O
+minimum, no nontrivial ordinal sum   254/725 = 0.350344828
+witness                              14:0000000000030001000f0009003f002f00ff00bf03ff02ff0fff0aff
+width, height, extensions            2, 7, 725
+canonical form                       14:000000000002000600030017001f003f007f00ff01ff05ff03ff17ff
+Hasse digraph6                       &M????B??_?B??O?B?AO?B?AO?B?AO?B??O
+
+Comparison with Peczarski's ladder
+----------------------------------
+quoted Table 1 record          254/725 = 0.350344828
+worst broken-rung ladder       254/725 = 0.350344828   L14,1,9
+  its Hasse digraph6           &MK?@??K?@_?K?@_?K?@_?K?@??K?@?????
+the recomputed ladder record CONFIRMS the quoted value
+census minimum, not a sum      254/725 = 0.350344828
+the census minimum EQUALS the worst ladder: Peczarski's conjecture holds at this order
+
+proposed gap upper end        0.348843000 (stated decimal)
+no balance value lies strictly inside the proposed gap
+
+Low balance tail
+----------------
+window (1/3, 9/25] = (0.333333333, 0.360000000]
+             value      decimal            posets     not a sum  wid  witness
+      37/106       0.349056604                11             0    2  14:0000000000010007000f000f003f001f00ff009f03ff02ff0fff0aff
+      97/277       0.350180505                 3             0    2  14:2000200020032001200f2009203f202f20ff20bf23ff22bf2fff0000
+     254/725       0.350344828                 1             1    2  14:0000000000030001000f0009003f002f00ff00bf03ff02ff0fff0aff
+     157/448       0.350446429                 2             0    2  14:2000200020032001200f2009203f202f20ff20bf21ff22ff2bff0000
+      20/57        0.350877193                 6             0    2  14:00000000000100070007001f000f007f004f01ff017f03ff05ff17ff
+     103/292       0.352739726                 2             2    2  14:0000000000030001000f0009003f002f007f00af03ff02ff0fff0aff
+     357/1012      0.352766798                 2             2    2  14:0000000000030001000f0009003f002f007f00bf01ff02bf0fff0abf
+       6/17        0.352941176                29             0    3  14:0000000000010007000f000f001f001f007f00bf017f057f05ff0fff
+      95/269       0.353159851                 2             0    2  14:2000200020032001200f2009201f202f20ff20af21ff22ff2bff0000
+      23/65        0.353846154                18             0    2  14:0000000000010007000f001f001f007f003f01ff013f03ff05ff17ff
+     107/302       0.354304636                 3             0    2  14:2000200020032001200f2009201f202f20ff20bf23ff22bf2fff0000
+      94/265       0.354716981                 2             2    2  14:0000000000030001000f0009003f002f007f00bf03ff02ff0fff0aff
+     175/493       0.354969574                 4             0    2  14:2000200020032001200f2009201f202f20ff20bf21ff22ff2bff0000
+      16/45        0.355555556                30             0    2  14:00000000000100070007000f003f003f00ff007f01ff027f0fff0aff
+     137/385       0.355844156                 6             0    2  14:2000200020032001200f2009201f202f207f20af23ff22af2fff0000
+      26/73        0.356164384                11             0    2  14:0000000000010007000f000f003f001f007f009f01ff02bf0fff0aff
+     169/474       0.356540084                 3             0    2  14:200020002003200120072009201f202b207f20af23ff22bf2fff0000
+      61/171       0.356725146                 1             1    2  14:000000000003000100070009001f002b007f00af01ff02bf0fff0aff
+       5/14        0.357142857                91             0    2  14:00000000000100070007000f003f007f00ff00ff03ff01ff0fff09ff
+     224/627       0.357256778                 4             0    2  14:200020002003200120072009201f202920ff20bf21ff22ff2bff0000
+     144/403       0.357320099                 1             1    2  14:0000000000030001000f0009003f002f00ff00af03ff02ff0fff0aff
+     134/375       0.357333333                 6             0    3  14:00000000000100070007001f000f000f005f015f01df05df05ff0fff
+      99/277       0.357400722                 6             0    2  14:00000000000100070007001f000f003f004f00ff014f02ff057f17ff
+      94/263       0.357414449                 6             0    2  14:00000000000100070007001f000f003f004f00ff015f03ff057f17ff
+     437/1221      0.357903358                 2             2    2  14:0000000000030001000f0009001f002f007f00af01ff02bf0fff0aff
+      29/81        0.358024691                18             0    2  14:0000000000010007000f001f001f007f003f00ff013f03ff057f17ff
+     100/279       0.358422939                 6             0    2  14:00000000000100070007001f000f003f004f00bf015f03ff055f17ff
+     761/2122      0.358623940                 2             2    3  14:0000000000030001000f0009003f001f002f01bf013f03ff05ff17ff
+      80/223       0.358744395                 1             1    2  14:0000000000030001000f0009001f002b005f00bf03ff02bf0fff0aff
+     814/2269      0.358748347                 1             1    3  14:0000000000010001000700070037001f009f019f01bf05ff05ff0fff
+      14/39        0.358974359                57             0    3  14:000000000001000100070007001f007f007f00ff00ff03ff03ff0fff
+     135/376       0.359042553                 6             0    2  14:2000200020032001200f2009201f202f207f20af23ff22bf2fff0000
+     125/348       0.359195402                 4             0    2  14:2000200020032001200720092017202b20ff20af21ff22ff2bff0000
+     295/821       0.359317905                 1             1    3  14:000000000001000100070007001f005f007f017f017f03ff03ff0fff
+     768/2137      0.359382312                 1             1    3  14:000000000001000100070007003f001f009f01bf01bf03ff03ff0fff
+     178/495       0.359595960                 6             0    3  14:00000000000100070007000f000f003f003f00ff00ff03ff03ff0fff
+     634/1763      0.359614294                 2             0    3  14:200020002001200120072007201f201f207f207f21ff21ff27ff0000
+      41/114       0.359649123                 6             0    3  14:00000000000100070007001f000f007f004f005f03ff017f0fff0b7f
+      50/139       0.359712230                30             0    2  14:00000000000100070007001f000f003f004f00bf014f03ff057f17ff
+     163/453       0.359823400                 2             0    2  14:2000200020032001200720092017202b207f20af21ff22af2bff0000
+     325/903       0.359911406                 4             0    2  14:20002000200320012007200920172029207f20af21ff22bf2bff0000
+       9/25        0.360000000                70             0    2  14:00000000000100070007000f003f007f007f01ff00ff03ff04ff17ff
+
+Equality cases
+--------------
+128 isomorphism classes with balance exactly 1/3
+68 stored representatives (dual pairs share one)
+the ordinal-sum family predicts 128
+  count 1  connected 0  14:00000000000100070007000f003f007f00ff00ff01ff07ff07ff0fff
+  count 1  connected 0  14:0000000000010007000f000f001f007f007f00ff03ff07ff07ff0fff
+  count 2  connected 0  14:0000000000010007000f000f001f007f00ff00ff01ff07ff07ff0fff
+  count 2  connected 0  14:0000000000010007000f001f001f003f00ff00ff01ff07ff07ff0fff
+  count 2  connected 0  14:0000000000010007000f001f003f003f007f01ff03ff07ff07ff0fff
+  count 2  connected 0  14:0000000000010007000f001f003f007f007f00ff03ff07ff07ff0fff
+  count 2  connected 0  14:0000000000010007000f001f003f007f00ff00ff01ff07ff07ff0fff
+  count 1  connected 0  14:0000000000010007000f001f003f007f00ff01ff03ff07ff07ff0fff
+  count 1  connected 0  14:20002000200120072007200f203f203f207f21ff21ff23ff2fff0000
+  count 2  connected 0  14:20002000200120072007200f203f203f207f21ff23ff23ff27ff0000
+  count 2  connected 0  14:20002000200120072007200f203f207f207f20ff23ff23ff27ff0000
+  count 2  connected 0  14:20002000200120072007200f203f207f20ff21ff23ff23ff27ff0000
+  count 2  connected 0  14:2000200020012007200f200f201f207f207f20ff23ff23ff27ff0000
+  count 2  connected 0  14:2000200020012007200f200f201f207f20ff21ff23ff23ff27ff0000
+  count 2  connected 0  14:2000200020012007200f201f201f203f20ff21ff21ff23ff2fff0000
+  count 2  connected 0  14:2000200020012007200f201f201f203f20ff21ff23ff23ff27ff0000
+  count 2  connected 0  14:2000200020012007200f201f203f203f207f21ff21ff23ff2fff0000
+  count 2  connected 0  14:2000200020012007200f201f203f203f207f21ff23ff23ff27ff0000
+  count 2  connected 0  14:2000200020012007200f201f203f207f207f20ff23ff23ff27ff0000
+  count 1  connected 0  14:2000200020012007200f201f203f207f20ff21ff21ff23ff2fff0000
+  count 2  connected 0  14:2000200020012007200f201f203f207f20ff21ff23ff23ff27ff0000
+  count 2  connected 0  14:30003000300130073007300f303f303f307f31ff31ff33ff20000000
+  count 2  connected 0  14:30003000300130073007300f303f307f30ff30ff31ff37ff20000000
+  count 2  connected 0  14:30003000300130073007300f303f307f30ff31ff31ff33ff20000000
+  count 2  connected 0  14:3000300030013007300f300f301f307f307f30ff33ff37ff20000000
+  count 2  connected 0  14:3000300030013007300f300f301f307f30ff30ff31ff37ff20000000
+  count 2  connected 0  14:3000300030013007300f300f301f307f30ff31ff31ff33ff20000000
+  count 2  connected 0  14:3000300030013007300f301f301f303f30ff30ff31ff37ff20000000
+  count 2  connected 0  14:3000300030013007300f301f301f303f30ff31ff31ff33ff20000000
+  count 2  connected 0  14:3000300030013007300f301f303f303f307f31ff31ff33ff20000000
+  count 1  connected 0  14:3000300030013007300f301f303f307f307f30ff33ff37ff20000000
+  count 2  connected 0  14:3000300030013007300f301f303f307f30ff30ff31ff37ff20000000
+  count 2  connected 0  14:3000300030013007300f301f303f307f30ff31ff31ff33ff20000000
+  count 2  connected 0  14:38003800380138073807380f383f383f387f39ff3bff300020000000
+  count 2  connected 0  14:38003800380138073807380f383f387f387f38ff3bff300020000000
+  count 2  connected 0  14:38003800380138073807380f383f387f38ff38ff39ff300020000000
+  count 2  connected 0  14:3800380038013807380f380f381f387f387f38ff3bff300020000000
+  count 2  connected 0  14:3800380038013807380f380f381f387f38ff38ff39ff300020000000
+  count 2  connected 0  14:3800380038013807380f381f381f383f38ff38ff39ff300020000000
+  count 1  connected 0  14:3800380038013807380f381f381f383f38ff39ff3bff300020000000
+  count 2  connected 0  14:3800380038013807380f381f383f383f387f39ff3bff300020000000
+  count 2  connected 0  14:3800380038013807380f381f383f387f387f38ff3bff300020000000
+  count 2  connected 0  14:3800380038013807380f381f383f387f38ff38ff39ff300020000000
+  count 2  connected 0  14:3c003c003c013c073c073c0f3c3f3c3f3c7f3dff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c073c0f3c3f3c7f3c7f3cff3800300020000000
+  count 1  connected 0  14:3c003c003c013c073c073c0f3c3f3c7f3cff3dff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c0f3c0f3c1f3c7f3c7f3cff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c0f3c0f3c1f3c7f3cff3dff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c0f3c1f3c1f3c3f3cff3dff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c0f3c1f3c3f3c3f3c7f3dff3800300020000000
+  count 2  connected 0  14:3c003c003c013c073c0f3c1f3c3f3c7f3c7f3cff3800300020000000
+  count 2  connected 0  14:3e003e003e013e073e073e0f3e3f3e3f3e7f3c003800300020000000
+  count 2  connected 0  14:3e003e003e013e073e073e0f3e3f3e7f3eff3c003800300020000000
+  count 2  connected 0  14:3e003e003e013e073e0f3e0f3e1f3e7f3eff3c003800300020000000
+  count 2  connected 0  14:3e003e003e013e073e0f3e1f3e1f3e3f3eff3c003800300020000000
+  count 2  connected 0  14:3e003e003e013e073e0f3e1f3e3f3e3f3e7f3c003800300020000000
+  count 2  connected 0  14:3f003f003f013f073f073f0f3f3f3f7f3e003c003800300020000000
+  count 2  connected 0  14:3f003f003f013f073f0f3f0f3f1f3f7f3e003c003800300020000000
+  count 2  connected 0  14:3f003f003f013f073f0f3f1f3f1f3f3f3e003c003800300020000000
+  count 2  connected 0  14:3f003f003f013f073f0f3f1f3f3f3f7f3e003c003800300020000000
+  count 2  connected 0  14:3f803f803f813f873f873f8f3fbf3f003e003c003800300020000000
+  count 2  connected 0  14:3f803f803f813f873f8f3f8f3f9f3f003e003c003800300020000000
+  count 2  connected 0  14:3f803f803f813f873f8f3f9f3fbf3f003e003c003800300020000000
+  count 2  connected 0  14:3fc03fc03fc13fc73fc73fcf3f803f003e003c003800300020000000
+  count 2  connected 0  14:3fc03fc03fc13fc73fcf3fdf3f803f003e003c003800300020000000
+  count 2  connected 0  14:3fe03fe03fe13fe73fef3fc03f803f003e003c003800300020000000
+  count 2  connected 0  14:3ff03ff03ff13ff73fe03fc03f803f003e003c003800300020000000
+  count 2  connected 0  14:3ff83ff83ff93ff03fe03fc03f803f003e003c003800300020000000
+
+Majority-cycle witnesses
+------------------------
+  relation full length  3  count    477,954,774  14:000000000000000000000000000000000000000f00110010022f163f
+  relation full length  4  count      5,419,981  14:000000000000000000000000000000000003000c001000200117022d
+  relation full length  5  count         33,473  14:00000000000000000000000000000003000c00300040009f016d0276
+  relation full length  6  count         10,423  14:000000000000000000000000000000000007000b0031001c002c0032
+  relation full length  7  count             61  14:0000000000000000000300030001004100410047004d004d00491e4f
+  relation full length  8  count             30  14:0000000000000000000300050006000300050002000400f7035705a7
+  relation inc  length  3  count    477,954,774  14:000000000000000000000000000000000000000f00110010022f163f
+  relation inc  length  4  count      5,419,981  14:000000000000000000000000000000000003000c001000200117022d
+  relation inc  length  5  count         33,473  14:00000000000000000000000000000003000c00300040009f016d0276
+  relation inc  length  6  count         10,423  14:000000000000000000000000000000000007000b0031001c002c0032
+  relation inc  length  7  count             61  14:0000000000000000000300030001004100410047004d004d00491e4f
+  relation inc  length  8  count             30  14:0000000000000000000300050006000300050002000400f7035705a7
+
+independently recomputed 124 witnesses
+PASS: 16384 complete, disjoint shards
+
+Deposit
+-------
+
+The complete 16,384-shard archive, its checksum manifest, and the build record
+are deposited on Zenodo. The immutable version DOI for the deposit this report
+describes is 10.5281/zenodo.21696940. Concept DOI
+10.5281/zenodo.21576029 always resolves to the latest version.
+
+Production files
+----------------
+
+The census binary was
+ebd4683ec498d95f178716fccbf3347b25f44dd4152d3c7f3c54554e7bad31cc, built with
+gcc 13.3.0 and -march=native on AMD EPYC 7B13, byte-identically on two hosts.
+The generator was genposetg 1.1 from nauty 2.9.1.
+The 16,384 accepted `TIME` records sum to 5,103.33 user core-hours; accepted
+shards span 53 hours 33 minutes 32 seconds.
+
+6e816fee5268fbfc396be85f642e2130f6b9e3470573588989d26ed19b93cb6a  src/balance_census.c (as run)
+fc0e8cebabc2b84e2283ea42aea419e45cdd3a5cc052f3aa8782a05d93952a73  src/balance_census.c (as released)
+27414a7a9a4718980db800b0dcea1e39cf97ad15439318e1ac14080d9f7eabcb  src/balance_census.c (comments stripped)
+87fb6bb1026e0d16362af4cfeb97d75ed82d761b3bce767d60849c86d0dd1295  src/poset_dp.h
+
+The released census source differs from the source that produced the run in
+one block comment and nowhere else: the original cited a file that is not part
+of the public release. Passing each through
+`gcc -x c -fpreprocessed -E -P -` removes comments and gives the same recorded
+hash. `tests/check_census.sh` enforces both the released byte hash and this
+comment-stripped hash.

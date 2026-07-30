@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript."
+title: "Balance Constants, Majority Cycles, and the Gold Partition Conjecture through Fourteen Elements"
+type: software
+version: "2.0.0"
+doi: "10.5281/zenodo.21576029"
+authors:
+  - family-names: Gupta
+    given-names: Anish
+    email: ag2269@cantab.ac.uk
+    orcid: "https://orcid.org/0009-0008-8137-7729"
+repository-code: "https://github.com/agupta/gold-partition-conjecture"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Balance Constants, Majority Cycles, and the Gold Partition Conjecture through Fourteen Elements"
+  authors:
+    - family-names: Gupta
+      given-names: Anish
+      orcid: "https://orcid.org/0009-0008-8137-7729"
+  year: 2026
+  doi: "10.5281/zenodo.21576029"
+keywords:
+  - posets
+  - linear extensions
+  - balance constant
+  - Gold Partition Conjecture
+  - 1/3–2/3 conjecture
+  - linear extension majority cycle
+  - computer-assisted proof

@@ -1,0 +1,34 @@
+Controlled GPC bilateral-screen timing ablation
+===============================================
+
+Date: 26 July 2026
+
+The baseline was the exact source and binary used for the order-14
+calculation. The comparison build removed only the successful early return
+from the bilateral low-slave screen; all subsequent exact recurrences were
+unchanged.
+
+Both programs were compiled with GCC 13.3.0 and run on the production
+platform (AMD EPYC 7B13). One process was pinned to a single CPU, the builds
+were warmed up, and their order was alternated between repetitions. Five
+repetitions were made through order 12 and three at order 13. Order 10 is a
+complete pass; the other rows sum the same three fixed modulus residues. The
+table reports median user times.
+
+order  workload                         baseline (s)  no screen (s)  ratio  range
+-----  -------------------------------  ------------  -------------  -----  ------------
+   10  complete                                 1.84           7.80  4.245  4.232--4.286
+   11  K=16, residues 0,5,11                    8.54          41.15  4.813  4.797--4.826
+   12  K=256, residues 0,85,170                17.50          97.58  5.571  5.563--5.586
+   13  K=4096, residues 0,1365,2730            56.93         486.70  8.551  8.526--8.570
+
+For every paired invocation, the total, chain count, invariant
+pair-certificate union, balanced-triple count, and open count agreed exactly.
+This measures the bilateral screen within the present implementation. It is
+not a controlled comparison with the programs of Peczarski or De Loof, De
+Meyer, and De Baets.
+
+The source SHA-256 digests are:
+
+ec79469af12b3af7314cc9471a44e7fc454e99ef002da08393fa84098c47bbc3  gpc.c
+ac20e999c3f0f05841f00838ac8823907e6dbc88375c7a4ab75ab84516a65f7c  gpc-no-bilateral.c

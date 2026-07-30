@@ -1,0 +1,32 @@
+Linear-extension-majority cycle regression
+==========================================
+
+The companion full-pair program reproduces the following published values.
+
+order  cyclic classes  length 3  length 4
+-----  --------------  --------  --------
+    9               5         5         0
+   10             153       148         6
+   11           5,815     5,740       101
+
+Source: K. De Loof, B. De Baets, and H. De Meyer, "Counting linear
+extension majority cycles in partially ordered sets on up to 13 elements,"
+Computers & Mathematics with Applications 59 (2010), 1541--1547, Table 2,
+doi:10.1016/j.camwa.2009.12.021.
+
+The order-10 value was recomputed with:
+
+  build/majority_census 10 o q
+
+Order 11 was divided into four deterministic residues,
+
+  build/majority_census 11 o q m <residue> 4
+
+and the four summaries were summed. The aggregate certificate partition
+closed and the total was 46,749,427, the published number of unlabeled
+order-11 posets.
+
+The program shares the ideal-lattice enumeration and extension-counting
+routines used by the GPC verifier. Its source SHA-256 is:
+
+bbd5674c6380eb8ec45a29fc06b635a44620d5f72862c1d044706e40ad379399  src/majority_census.c

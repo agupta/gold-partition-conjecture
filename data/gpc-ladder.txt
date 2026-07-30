@@ -1,0 +1,14 @@
+Small-order regression using the order-14 production binary
+===========================================================
+
+order  total           chain  pair certificates  triple certificates  open
+-----  --------------  -----  -----------------  -------------------  ----
+   10       2,567,284      1          2,499,347               67,936     0
+   11      46,749,427      1         45,338,393            1,411,033     0
+   12   1,104,891,746      1      1,066,006,204           38,885,541     0
+   13  33,823,827,452      1     32,418,324,910        1,405,502,541     0
+
+At each order, the total agrees exactly with OEIS A000112. The certificate
+counts are regression values from this project; they are not published
+external reference values. The pair column is the invariant union of the
+low-slave and half-balanced searches.
